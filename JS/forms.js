@@ -107,7 +107,12 @@
             Questions[CurrentQuestion][i].style.height = 0;
             Questions[CurrentQuestion][i].style.transform = 'translateY(-10rem)';
             Questions[CurrentQuestion][i].style.display = 'none';    
-        }    
+        }
+        
+        if(CurrentQuestion === 5){
+            removeWarningMessage(Message, empty);
+        }
+        
         CurrentQuestion++;
         return CurrentQuestion;    
     }    
@@ -152,6 +157,21 @@
                 TogglePassword_NU[a].style.display = 'none';
             }
         }
+
+        /* Warning shown once they reach Question 3 */
+        if(CurrentQuestion === 2){
+            setWarningMessage(Message, 'Username must have 1 Uppercase Letter, 1 Lowercase Letter, & 1 Number')
+        }
+        /* Warning shown once they reach Question 4 or 5 */
+        if(CurrentQuestion === 3  || CurrentQuestion === 4){
+            setWarningMessage(Message, 'Password must have 1 Uppercase Letter, 1 Lowercase Letter, & 1 Number');
+        }
+        /* Warning shown once they reach Question 6 */
+        if(CurrentQuestion === 5){
+            setWarningMessage(Message, 'Email is only collected for unique id purposes.  We will NOT spam. :)');
+        }
+
+
     }
 
     // | -- Password Toggle -- ||
@@ -218,11 +238,11 @@ ShowPassword[1].onclick = function(){
 
             element.textContent = errormessage;
             element.classList.add('warning');
-            // element.style.borderLeft = '.2rem solid #FFFC2E';
-            // element.style.borderBottom = '.2rem solid #FFFC2E';
-            // element.style.borderRight = '.2rem solid #FFFC2E';
-            element.style.color = '#FFFFFF';
             element.style.opacity = 1;
+
+            if(CurrentQuestion === 4 || CurrentQuestion === 5){
+                element.style.color = '#FFFFFF';
+            }
 
         }
 
@@ -230,9 +250,6 @@ ShowPassword[1].onclick = function(){
 
             element.textContent = errormessage;
             element.classList.remove('warning');
-            // element.style.borderLeft = 'none';
-            // element.style.borderBottom = 'none';
-            // element.style.borderRight = 'none';
             element.style.color = 'transparent';
             element.style.opacity = 0;
 
@@ -252,16 +269,36 @@ ShowPassword[1].onclick = function(){
                 validResult = Validation[CurrentQuestion].test(value);  //  Test to see if input matches the pattern necessary for the Question
                 var passwordsMatch = true;  // Assume passwords will match.
 
-                /* What is done if input is valid. */  
-                if(validResult === true){
-                    removeErrorMessage(Message, empty);                                     // Remove the error message, if any was there.
+                /* What is done if input is valid. */
+                if (CurrentQuestion === 0 || CurrentQuestion === 1 || CurrentQuestion === 2 || CurrentQuestion === 5){
+                    if(validResult === true){
+                        removeErrorMessage(Message, empty);
+                        cycleQuestions();
+                    }
+
+                    else if(validResult === false){
+                        switch (CurrentQuestion){
+                            case 0:  setErrorMessage(Message, Answer, 'Please enter your first name.'); break;
+                            case 1:  setErrorMessage(Message, Answer, 'Please enter your last name.'); break;
+                            case 2:  setErrorMessage(Message, Answer, 'Usernames must have 1 Uppercase Letter, 1 Lowercase Letter, & 1 Number.'); break;
+                            case 3:  setErrorMessage(Message, Answer, 'Passwords must have 1 Uppercase Letter,  1 Lowercase Letter, & 1 Number.'); break;
+                            case 4:  setErrorMessage(Message, Answer, 'Passwords should match.'); break;
+                            case 5:  setErrorMessage(Message, Answer, 'Please enter a valid email address.  johndoe@email.com'); break;
+                            default: setErrorMessage(Message, 'That is not the right value'); break;
+                        }
+                    }
+                }                
+                
+                 else if(validResult === true){
                     if(Answer[3].value !== Answer[4].value){                                //  If Passwords do not match this is what to do.
                         if(CurrentQuestion === 4){
                             setErrorMessage(Message, Answer, 'Passwords must match.');   // Set error message stating that passwords do not match.
                             passwordsMatch = false;                                                     // Password variable set to false.
-                        }        
+                        }
+                                
                         else{                                                                                       // Move on without an error message if passwords do match.
                                 passwordsMatch = true;
+                                removeErrorMessage(Message, empty);                                     // Remove the error message, if any was there.  
                         }                            
                     }
 
@@ -277,18 +314,9 @@ ShowPassword[1].onclick = function(){
                             removeWarningMessage(Message, empty);
                             removeErrorMessage(Message, empty);
                             cycleQuestions();
-                                                        /* Warning shown once they reach Question 3 */
-                                                        if(CurrentQuestion === 2){
-                                                            setWarningMessage(Message, 'Username must have 1 Uppercase Letter, 1 Lowercase Letter, & 1 Number')
-                                                        }
-                                                        /* Warning shown once they reach Question 4 or 5 */
-                                                        if(CurrentQuestion === 3  || CurrentQuestion === 4){
-                                                            setWarningMessage(Message, 'Password must have 1 Uppercase Letter, 1 Lowercase Letter, & 1 Number');
-                                                        }
                             break;        
                     }
-                }
-                
+                }                
         
                 else if(validResult === false) {
         
