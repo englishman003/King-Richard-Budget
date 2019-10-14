@@ -74,6 +74,12 @@ html {
   color: #FFFFFF;
   text-align: center; }
 
+.superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .inputResponseMessage .warning {
+  color: #FFFFFF; }
+
+.superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .inputResponseMessage .error {
+  color: #FFFC2E; }
+
 .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .passwordToggleContainer {
   fill: #FFFFFF; }
   .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .passwordToggleContainer:hover {
@@ -110,14 +116,6 @@ html {
 .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .QuestionLabel {
   font-size: 2.8rem;
   color: #FFFFFF; }
-
-.superContainer-newUserContainer .newUserForm_Inside-ProgressBar-Percentage {
-  text-align: center;
-  color: #FFFFFF; }
-
-.superContainer-newUserContainer .newUserForm_Inside-ProgressBar .progressExpand {
-  line-height: 4.146rem;
-  font-size: 2.4rem; }
 
 .mainNav {
   position: relative;
@@ -9072,9 +9070,19 @@ html {
               transition: all .25s;
               opacity: 0; }
             .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .inputResponseMessage .warning {
-              background-color: rgba(255, 252, 46, 0.5); }
+              position: relative;
+              background-color: rgba(255, 252, 46, 0.5);
+              border-left: 0.2rem solid #FFFC2E;
+              border-bottom: 0.2rem solid #FFFC2E;
+              border-right: 0.2rem solid #FFFC2E;
+              opacity: 0; }
             .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .inputResponseMessage .error {
-              background-color: rgba(255, 0, 0, 0.5); }
+              position: relative;
+              background-color: rgba(255, 0, 0, 0.5);
+              border-left: .2rem solid red;
+              border-bottom: .2rem solid red;
+              border-right: .2rem solid red;
+              opacity: 0; }
           .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer {
             position: relative;
             height: 100%;

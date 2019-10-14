@@ -202,11 +202,7 @@ ShowPassword[1].onclick = function(){
 
         function setErrorMessage(element, element2, errormessage){        
             element.textContent = errormessage;
-            element.style.color = '#FFFC2E';
             element.classList.add('error');
-            element.style.borderLeft = '.2rem solid red';
-            element.style.borderBottom = '.2rem solid red';
-            element.style.borderRight = '.2rem solid red';
             element.style.opacity = 1;
             element2[CurrentQuestion].focus();
             element2[CurrentQuestion].style.borderBottom = '.2rem solid red';        
@@ -215,9 +211,6 @@ ShowPassword[1].onclick = function(){
         function removeErrorMessage(element, errormessage){
             element.textContent = errormessage;
             element.classList.remove('error');
-            element.style.borderLeft = 'none';
-            element.style.borderBottom = 'none';
-            element.style.borderRight = 'none';
             element.opacity = 0;
         }
 
@@ -225,9 +218,9 @@ ShowPassword[1].onclick = function(){
 
             element.textContent = errormessage;
             element.classList.add('warning');
-            element.style.borderLeft = '.2rem solid #FFFC2E';
-            element.style.borderBottom = '.2rem solid #FFFC2E';
-            element.style.borderRight = '.2rem solid #FFFC2E';
+            // element.style.borderLeft = '.2rem solid #FFFC2E';
+            // element.style.borderBottom = '.2rem solid #FFFC2E';
+            // element.style.borderRight = '.2rem solid #FFFC2E';
             element.style.color = '#FFFFFF';
             element.style.opacity = 1;
 
@@ -236,10 +229,10 @@ ShowPassword[1].onclick = function(){
         function removeWarningMessage(element, errormessage){
 
             element.textContent = errormessage;
-            element.classList.add('warning');
-            element.style.borderLeft = 'none';
-            element.style.borderBottom = 'none';
-            element.style.borderRight = 'none';
+            element.classList.remove('warning');
+            // element.style.borderLeft = 'none';
+            // element.style.borderBottom = 'none';
+            // element.style.borderRight = 'none';
             element.style.color = 'transparent';
             element.style.opacity = 0;
 

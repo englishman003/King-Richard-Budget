@@ -120,11 +120,21 @@
                             }
 
                             .warning{
+                                position: relative;
                                 background-color: rgba($complementColor, .5);
+                                border-left: .2rem solid $complementColor;
+                                border-bottom: .2rem solid $complementColor;
+                                border-right: .2rem solid $complementColor;
+                                opacity: 0;
                             }
 
                             .error{
+                                position: relative;
                                 background-color: rgba(red, .5);
+                                border-left: .2rem solid red;
+                                border-bottom: .2rem solid red;
+                                border-right: .2rem solid red;
+                                opacity: 0;
                             }
 
                         }
@@ -207,15 +217,7 @@
 
                                     }
 
-                                }
-
-                                // .q2, .q3, .q4, .q5, .q6{
-
-                                //     display: none;
-                                //     height: 0;
-                                // }
-
-                                
+                                }                                
 
                                 .QuestionLabel{
                                     position: absolute;
