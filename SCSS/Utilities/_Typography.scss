@@ -130,14 +130,7 @@ html {
 
                 &-ValidationContainer{
 
-                    .inputValidation{
-
-                    }
-
                     .newUserFormError-Continue{
-
-                        .floatingLabelContainer{
-                        }
 
                         .inputContinue-Submit,
                         .inputContinue-Submit2{
@@ -238,29 +231,7 @@ html {
 
                     }
 
-                }
-
-                &-ProgressBar{
-
-
-                    .progressBar{
-                    }
-
-                    &-Percentage{
-                    text-align: center;
-                    color: $colorWhite;
-                 }
-
-                 .progressExpand{
-
-                    line-height: 4.146rem;
-                    font-size: 2.4rem;
-
-                 }
-
-                }
-
-                
+                }                
 
             }
 
