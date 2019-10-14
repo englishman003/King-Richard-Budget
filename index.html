@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>King Richard &mdash; Budget Like Royalty </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href= "CSS/budgetStyle.css">
+    </head>
+    <body>        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <section class="gridDesktop">
+
+                <img src="SCSS/Vendors/Images/kingRichardLogo-background.svg" alt="King Richard Logo" class="mainLogo column_4-18 row_5-10">
+
+                <!-- Start Navigation -->
+
+                <nav class="mainNav column_1-24 row_1-1">
+
+                    <section class="mainNav_siteTitle">
+
+                        <svg class="mainNav_siteTitle-Logo">
+                            <use xlink:href="SCSS/Vendors/Icomoon/N-Icons/N-Icons.svg#icon-kingRichardLogo"></use>
+                        </svg>
+
+                        <p class="mainNav_siteTitle-Name">
+                            King Richard
+                        </p>
+
+                    </section>
+
+                    <section class="mainNav_userNav">
+
+                        <section class="mainNav_userNav-Login" id="Login">Login</section>
+                        <section class="mainNav_userNav-newUser" id="newUser">New User</section>
+                        <section class="mainNav_userNav-LoginForm" id="loginForm">
+
+                            <section class="mainNav_userNav-LoginForm-Input column_1-1 row_1-1">
+                                <input type="text" name="username" id="username" class="mainNav_userNav-LoginForm-Input-username" placeholder="Username">
+                                <label for="username" id="userNav-username">Username</label>
+                            </section>
+
+                            <section class="mainNav_userNav-LoginForm-Input column_1-1 row_2-1">
+                                <input type="password" name="password" id="password" class="mainNav_userNav-LoginForm-Input-password" placeholder="Password">
+                                <label for="password" id="userNav-password">Password</label>
+                            </section>
+
+                            <button class="submitButton column_1-1 row_3-1" id="submit">Login</button>
+                            <button class="submitButton column_1-1 row_3-1" id="cancel">Cancel</button>
+                            
+
+                        </section>
+
+                    </section>
+
+                </nav>
+
+                <!-- End Navigation -->
+
+                <!-- New User Forms -->
+
+                <section class="superContainer column_1-24 row_2-17" id="Super">
+
+                    <section class="superContainer-newUserContainer" id="newUserContainer">
+
+                        <section class="superContainer-newUserContainer-close column_23-1 row_2-1" id="Close">Close</section>
+
+                        <form action="" class="newUserForm column_5-16 row_1-17" id="newUserForm">
+
+                            <section class="newUserForm_Inside column_3-8 row_7-9">
+
+                                <section class="newUserForm_Inside-ValidationContainer column_1-8 row_1-8">
+
+                                    <section class="newUserFormError-Continue column_1-8 row_1-4">
+
+                                         <section class="floatingLabelContainer column_1-8 row_1-1"></section>
+
+                                        <section class="questionsContainer column_1-7 row_2-2">
+
+                                            <section class="questionsContainer Questions">
+
+                                                <input type="text" name="firstName" id="firstName" class="q1 Question" placeholder="Gandalf" autocomplete="off" required>
+                                                <label for="firstName" class="QuestionLabel">What is your first name?</label>
+
+                                                <input type="text" name="lastName" id="lastName" class="q2 Question" placeholder="The White" autocomplete="off" required>
+                                                <label for="lastName" class="QuestionLabel">What is your last name?</label>
+
+                                                <input type="text" name="userName" id="userName" class="q3 Question" placeholder="Ncluff003" autocomplete="off" required>
+                                                <label for="userName" class="QuestionLabel">What will be your username?</label>
+                                                    <svg class="passwordToggleContainer">
+
+                                                        <use xlink:href="/SCSS/Vendors/Icomoon/N-Icons/N-Icons.svg#icon-hidePassword" class="nuHide"></use>
+                                                        <use xlink:href="/SCSS/Vendors/Icomoon/N-Icons/N-Icons.svg#icon-showPassword" class="nuShow" ></use>
+
+                                                    </svg>
+                                                <input type="password" name="password" id="password" class="q4 Question" placeholder="Password3" autocomplete="off" required>
+                                                <label for="password" class="QuestionLabel">Please enter your password</label>
+                                                <svg class="passwordToggleContainer">
+
+                                                    <use xlink:href="/SCSS/Vendors/Icomoon/N-Icons/N-Icons.svg#icon-hidePassword" class="nuHide"></use>
+                                                    <use xlink:href="/SCSS/Vendors/Icomoon/N-Icons/N-Icons.svg#icon-showPassword" class="nuShow"></use>
+
+                                                </svg>
+                                                <input type="password" name="repeatPassword" id="password" class="q5 Question" placeholder="Password3" autocomplete="off" required>
+                                                <label for="repeatPassword" class="QuestionLabel">Please confirm your password</label>
+
+                                                <input type="email" name="email" id="email" class="q6 Question" placeholder="johnsmith@email.com" autocomplete="off" required>
+                                                <label for="email" class="QuestionLabel">What will your email be?</label>
+
+                                            </section>
+
+
+                                        </section>
+
+                                        <input type="submit" value="Continue" class="inputContinue-Submit column_8-2 row_2-2">
+                                        <input type="button" value="Continue" class="inputContinue-Submit2 column_8-2 row_2-2">
+
+                                        <section class="inputResponseMessage column_1-8 row_4-1">
+                                                
+                                            <section class="messageArea column_1-8 row_1-2"></section>
+
+                                        </section>
+
+                                    </section>
+
+                                </section>                                   
+
+                            </section>
+
+                                
+                        </form>
+
+                    </section>
+
+                </section>
+
+                <!-- End New User Forms -->
+
+            </section>
+
+
+        <script src="SCSS/Vendors/Icomoon/N-Icons/svgxuse.js" async defer></script>
+        <script src="JS/forms.js" async defer></script>
+        <script src="JS/index.js" async defer></script>
+    </body>
+</html>

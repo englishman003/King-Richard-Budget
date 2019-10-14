@@ -1,0 +1,241 @@
+.superContainer{
+
+    ///////////////////////////////////////////////////////
+    //  Base Code - New User Container
+
+    &-newUserContainer{
+
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($primaryColorDark, .8);
+        transition: width .3s ease-in;
+
+        display: none;
+        @include gridLayout(100%, 0, repeat(24, 1fr), repeat(17, 1fr), 0 , 0);
+        @include gridPlacement(24, 24, 17, 17);
+
+        ///////////////////////////////////////////////////////////////////////////
+        //  End of Base Code - New User Container
+
+        ///////////////////////////////////////
+        //  Container Close
+
+        &-close{
+            position: relative;
+            display: none;
+            border: .2rem solid $colorWhite;
+        }
+
+        ///////////////////////////////////////
+        //  End Container Close
+
+        /////////////////////////////////////////////////////////
+        //  New User Form Container - Base
+        .newUserForm{
+            position:relative;
+            // background-color: rgba($secondaryColor, .5);
+            opacity: 1;
+            transition: opacity .2s;
+
+            display: grid;
+            @include gridLayout(100%, 100%, repeat(12, 1fr), repeat(17, 1fr), 0, 0);
+            @include gridPlacement(12, 12, 17, 17);
+
+            /////////////////////////////////////////////////////////////////
+            // End New User Form Container - Base
+
+            &_Inside{
+
+                display: grid;
+                @include gridLayout(100%, 100%, repeat(8, 1fr), repeat(9, 1fr), 0, 0);
+                @include gridPlacement(8, 8, 9, 9);
+
+                &-ValidationContainer{
+
+                    display: grid;
+                    @include gridLayout(100%, 100%, repeat(8, 1fr), repeat(8, 1fr), 0, 0);
+                    @include gridPlacement(8, 8, 8, 8);
+
+                    .newUserFormError-Continue{
+
+                        display: grid;
+                        @include gridLayout(100%, 100%, repeat(8, 1fr), repeat(4, 1fr), 0, 0);
+                        @include gridPlacement(8, 8, 4, 4);
+                        // background-color: rgba($colorBlack, .2);
+
+                        .floatingLabelContainer{
+                            position: relative;
+                        }
+
+                        .inputContinue-Submit, .inputContinue-Submit2{
+                            position: relative;
+                            background-color: rgba($secondaryColor, .75);
+
+                            border-top-right-radius: 2.5rem;
+                            border-bottom-right-radius: 2.5rem;
+                            border-top: .2rem inset rgba($colorWhite, .2);
+                            border-right: .2rem inset rgba($colorGrey, .2);
+                            border-bottom: .2rem inset rgba($colorDarkGrey, .2);
+                            border-left: .2rem inset rgba($colorBlack, .2);
+
+                            &:visited{
+                                background-color: rgba($primaryColor, .5);
+                            }
+
+                            &:hover{
+                                background-color: rgba($secondaryColor, 1);
+                                border-top: .2rem inset rgba($colorWhite, .2);
+                                border-right: .2rem inset rgba($colorGrey, .2);
+                                border-bottom: .2rem inset rgba($colorDarkGrey, .2);
+                                border-left: .2rem inset rgba($colorBlack, .2);
+                                cursor: pointer;
+                            }
+
+                            &:active{
+                                background-color: rgba($complementColor, 1);
+                                border-top: .2rem outset rgba($colorBlack, .2);
+                                border-right: .2rem outset rgba($colorDarkGrey, .2);
+                                border-bottom: .2rem outset rgba($colorGrey, .2);
+                                border-left: .2rem outset rgba($colorWhite, .2);
+                            }
+                        }
+
+                        .inputContinue-Submit{
+                            display: 'none';
+                        }
+
+                        .inputResponseMessage{
+
+                            position: relative;
+                            display: grid;
+                            @include gridLayout(100%, 100%, repeat(8, 1fr), 1fr, 0, 0);
+                            @include gridPlacement(8, 8, 1, 1);
+
+                            .messageArea{
+                                display: block;
+                                width: 87.5%;
+                                transition: all .25s;
+                                opacity: 0;                                
+                            }
+
+                            .warning{
+                                background-color: rgba($complementColor, .5);
+                            }
+
+                            .error{
+                                background-color: rgba(red, .5);
+                            }
+
+                        }
+
+                        .questionsContainer{
+
+                            position: relative;
+                            height: 100%;
+                            width: 100%;
+                            background-color: rgba($colorBlack, .2);
+
+                            .passwordToggleContainer{
+
+                                position: absolute;
+                                top: 2rem;
+                                left: 51.5rem;
+                                fill: $colorWhite;
+
+                                height: 45%;
+                                width: 15%;
+
+                                z-index: 4;
+
+                                &:hover{
+                                    cursor: pointer;
+                                }
+
+                                .nuHide{
+                                    display: none;
+                                }
+
+                            }
+                            
+                            .Questions{
+
+                                ::-webkit-input-placeholder{
+                                    opacity: 0;
+                                    transition: inherit;
+                                }
+                
+                                ::-moz-placeholder{
+                                    opacity: 0;
+                                    transition: inherit;
+                                }
+
+                                .q1, .q2, .q3, .q4, .q5, .q6{
+
+                                    position: relative;
+                                    display: block;
+                                    height: 0;
+                                    width: 100%;
+
+                                    background-color: transparent;
+                                    border: .3rem solid transparent;
+                                    // border: .3rem inset rgba($colorGrey, .5);
+                                    border-bottom: .2rem solid $colorWhite;
+                                    // border-right: .2rem inset transparent;
+
+                                    &:focus{
+                                        outline: none;
+                                        border-bottom: .2rem solid $complementColor;
+                                    }
+
+                                    &:placeholder-shown + .QuestionLabel{
+                                        transform: translate(5rem, 2rem);
+                                    }
+                                    
+                                    &:focus::-webkit-input-placeholder{
+                                        opacity: 1;
+                                    }
+                
+                                    &:focus::-moz-placeholder{
+                                        opacity: 1;
+                                    }
+
+                                    &:not(:placeholder-shown) + .QuestionLabel, &:focus + .QuestionLabel{
+
+                                        transform: translate(0.5rem, -3.5rem);
+                                        cursor: pointer;
+
+                                    }
+
+                                }
+
+                                // .q2, .q3, .q4, .q5, .q6{
+
+                                //     display: none;
+                                //     height: 0;
+                                // }
+
+                                
+
+                                .QuestionLabel{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 2;
+
+                                    transition: all .4s;
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }               
+
+            }
+        }
+    }
+}

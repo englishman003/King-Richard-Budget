@@ -1,0 +1,23 @@
+* ,
+*::before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html { 
+    // This defines what 1rem should be
+    font-size: 62.5%;
+    font-family: Roboto Condensed, Verdana, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: $colorDarkerGrey;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}

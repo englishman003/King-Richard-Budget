@@ -1,0 +1,43 @@
+/////////////////////////////////////////
+//  Submit Button
+
+.submitButton{
+    position:relative;
+    display: grid;
+    justify-self: center;
+    align-self: start;
+    z-index: 13;
+
+    background-color: $primaryColor;
+    border-radius: .4rem;
+    border: .2rem solid transparent;
+
+    &:active{
+        outline: none;
+    }
+
+    &:hover{
+
+        cursor: pointer;
+        background-color: $secondaryColor;
+
+    }
+
+}
+
+
+/////////////////////////////////////////////////////
+// Login Submit & Cancel Buttons
+#submit{
+    margin-right: 10rem;
+    margin-top: -1.25rem;
+    height: 100%;
+    width: 35%;
+}
+
+#cancel{
+    margin-left: 10rem;
+    margin-top: -1.25rem;
+    height: 100%;
+    width: 35%;
+}

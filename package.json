@@ -1,0 +1,24 @@
+{
+  "name": "kingrichard",
+  "version": "1.0.0",
+  "description": "A budget fit for royalty.",
+  "main": "jQuery.v3.3.1.js",
+  "scripts": {
+    "watch:sass": "node-sass SCSS/Main/main.scss CSS/budgetStyle.css -w"
+  },
+  "keywords": [
+    "Budget",
+    "Money",
+    "Management",
+    "Money",
+    "Cents"
+  ],
+  "author": "Nathan Cluff",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

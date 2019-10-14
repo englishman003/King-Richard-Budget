@@ -1,0 +1,271 @@
+/////////////////////////////////
+// Base
+html {
+
+    font-family: Roboto Condensed, Lato, Century Gothic, Verdana, Sans-Serif;
+
+}
+
+.mainNav{
+
+    &_siteTitle{
+
+        &-Logo{
+            height: 90%;
+            width: 100%;
+            fill: $colorWhite;
+            align-self: center;
+        }
+
+        &-Name{
+
+            position: relative;
+            display: inline-block;
+            align-self: center;
+
+            color: $colorWhite;
+            font-size: 2.7rem;
+            font-family: Poor Richard, Roboto Condensed, Verdana, sans-serif;
+
+
+        }
+
+    }
+
+    &_userNav{
+
+        &-Login, &-newUser{
+
+            line-height: 4.185rem;
+            text-align: center;
+            font-size: 1.5rem;
+            color: $colorWhite;
+
+            &:hover{
+                color: $colorBlack;
+            }
+
+        }
+
+
+        ///////////////////////////////////////////
+        // Login Form Typography
+        &-LoginForm{
+
+            position: relative;
+            display: grid;
+            height: 400%;
+            background-color: $complementColor;
+            border-bottom-left-radius: .5rem;
+
+            &-Input{
+            
+                font-size: 1.6rem;
+
+                #userNav-username, #userNav-password{
+                    
+                    color: $primaryColor;
+
+                }
+
+                ::placeholder{
+                    color: $primaryColor;
+                }
+                
+                &-username, &-password{
+
+                    &:placeholder-shown + #userNav-username{
+                        color: $primaryColor;
+                    }
+
+                    &:placeholder-shown + #userNav-password{
+                        color: $primaryColor;
+                    }
+
+                    &:not(:placeholder-shown) + #userNav-username, &:focus + #userNav-username{
+                        color: $primaryColor;
+                    }
+
+                    &:not(:placeholder-shown) + #userNav-password, &:focus + #userNav-password{
+                        color: $primaryColor;
+                    }
+
+                }
+             
+            }
+
+            //////////////////////////////////
+            // Submit Button
+
+            .submitButton{
+                line-height: 2.5rem;
+                color: $colorWhite;
+            }
+
+        }
+
+    }
+    
+}
+
+.superContainer{
+
+    &-newUserContainer{
+
+        &-close{
+            color: $colorWhite;
+            font-size: 1.6rem;
+            text-align: center;
+            line-height: 4.3rem;
+            &:hover{
+                color: $secondaryColor;
+                cursor: pointer;
+            }
+
+        }
+
+        .newUserForm{
+
+            &_Inside{
+
+                &-ValidationContainer{
+
+                    .inputValidation{
+
+                    }
+
+                    .newUserFormError-Continue{
+
+                        .floatingLabelContainer{
+                        }
+
+                        .inputContinue-Submit,
+                        .inputContinue-Submit2{
+                            line-height: 7.5rem;
+                            font-size: 1.6rem;
+                            text-align: center;
+                            color: $colorWhite;
+
+                            &:active{
+                                color: $colorBlack;
+                            }
+                        }
+
+                        .inputResponseMessage{
+
+                            .messageArea{
+
+                                position: relative;
+                                line-height: 4.146rem;
+                                font-size: 1.6rem;
+                                padding-left: 2%;
+                                // color: $complementColor;
+                                color: $colorWhite;
+                                text-align: center;
+
+                            }
+
+                        }
+
+                        .questionsContainer{
+
+                            .passwordToggleContainer{
+
+                                fill: $colorWhite;
+
+                                &:hover{
+                                    fill: $complementColor;
+                                }
+
+                            }
+                            
+                            .Questions{
+
+                                ::-webkit-input-placeholder{
+                                    opacity: 0;
+                                    transition: inherit;
+                                }
+                
+                                ::-moz-placeholder{
+                                    opacity: 0;
+                                    transition: inherit;
+                                }
+
+                                ::placeholder{
+                                    color: $colorWhite;
+                                }
+
+                                .q1, .q2, .q3, .q4, .q5, .q6{
+
+                                    font-size: 2.8rem;
+                                    text-align: center;
+                                    color: $colorWhite;
+
+                                    &:focus{
+                                        color: $complementColor;
+                                    }
+
+                                    &:placeholder-shown + .QuestionLabel{
+                                        transform: translate(18rem, 2rem);
+                                    }
+                                    
+                                    &:focus::-webkit-input-placeholder{
+                                        opacity: 1;
+                                    }
+                
+                                    &:focus::-moz-placeholder{
+                                        opacity: 1;
+                                    }
+
+                                    &:not(:placeholder-shown) + .QuestionLabel{
+                                        color: $colorWhite;
+                                    }
+
+                                    &:focus + .QuestionLabel{
+                                        color: $complementColor;
+                                    }
+
+                                }
+
+                                .QuestionLabel{
+                                    font-size: 2.8rem;
+                                    color: $colorWhite;
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                &-ProgressBar{
+
+
+                    .progressBar{
+                    }
+
+                    &-Percentage{
+                    text-align: center;
+                    color: $colorWhite;
+                 }
+
+                 .progressExpand{
+
+                    line-height: 4.146rem;
+                    font-size: 2.4rem;
+
+                 }
+
+                }
+
+                
+
+            }
+
+        }
+
+    }
+
+}
