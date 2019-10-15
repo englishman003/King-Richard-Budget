@@ -105,7 +105,7 @@
         for(var i = 0; i < Questions[0].length; i++){    
             Questions[CurrentQuestion][i].style.opacity = 0;
             Questions[CurrentQuestion][i].style.height = 0;
-            Questions[CurrentQuestion][i].style.transform = 'translateY(-10rem)';
+            Questions[CurrentQuestion][i].style.marginTop = '(-20rem)';
             Questions[CurrentQuestion][i].style.display = 'none';    
         }
         
@@ -134,7 +134,8 @@
                 ShowPassword[0].style.display = 'none';
                 HidePassword[0].style.display = 'none';
                 ShowPassword[1].style.display = 'inline-block';
-            }    
+            }
+        Questions[CurrentQuestion][j].style.display = 'inline-block';    
         Questions[CurrentQuestion][j].style.opacity = 1;
         Questions[CurrentQuestion][j].style.height = '100%';
         getFocus(Questions[CurrentQuestion][j]);
@@ -225,7 +226,7 @@ ShowPassword[1].onclick = function(){
             element.classList.add('error');
             element.style.opacity = 1;
             element2[CurrentQuestion].focus();
-            element2[CurrentQuestion].style.borderBottom = '.2rem solid red';        
+            // element2[CurrentQuestion].style.borderBottom = '.2rem solid red';        
         }
 
         function removeErrorMessage(element, errormessage){
@@ -250,7 +251,6 @@ ShowPassword[1].onclick = function(){
 
             element.textContent = errormessage;
             element.classList.remove('warning');
-            element.style.color = 'transparent';
             element.style.opacity = 0;
 
         }   
@@ -372,12 +372,20 @@ document.addEventListener("keydown", function(event){
         }    
     }
 
+    NewUser.onclick = function(){
+        NewUserContainer.style.display = 'grid';                                                //  Make the New User Container Visible                                                                                      //  Hiding Questions, Labels, & Password Toggle From The Start
+        setTimeout(function() {setUpNewUserForms()}, 100);                         //  After 1/10th Of A Second, Set Up Form To Start From 1st Question
+        CloseContainer_NU.style.display = 'grid';                                            //  Make Option Of Closing & Cancelling New User Membership Possible
+        setTimeout(function() {getFocus(Answer[QuestionIndex])}, 400);     //  After 4/10ths Of A Second, Make The 1st Question Focused
+    }
+
     function hideEverything(){
         
         /* Hide Both Questions & Their Labels */
         for(var i = 0; i < Questions.length; i++){
             for(var j = 0; j < Questions[i].length; j++){
                 Questions[i][j].style.opacity = 0;
+                Questions[i][j].style.display = 'none';                                 //  Hiding Questions, Labels, & Password Toggle When Form Is Closed
             }
         }
 
@@ -388,10 +396,24 @@ document.addEventListener("keydown", function(event){
         }
     }
 
-    NewUser.onclick = function(){
-        NewUserContainer.style.display = 'grid';                                                //  Make the New User Container Visible
-        hideEverything();                                                                                       //  Hiding Questions, Labels, & Password Toggle From The Start
-        setTimeout(function() {setUpNewUserForms()}, 100);                         //  After 1/10th Of A Second, Set Up Form To Start From 1st Question
-        CloseContainer_NU.style.display = 'block';                                            //  Make Option Of Closing & Cancelling New User Membership Possible
-        setTimeout(function() {getFocus(Answer[QuestionIndex])}, 400);     //  After 4/10ths Of A Second, Make The 1st Question Focused
+    function hideFormContainer(element){
+        element.style.display = 'none';
+    }
+
+    CloseContainer_NU.onclick = function(){
+
+        hideEverything();
+        NewUserContainer.style.width = 0;
+        setTimeout(function() {hideFormContainer(NewUserContainer)}, 300);
+        for(i = 0; i < Answer.length; i++){
+            Question[i].style.marginTop = 0;
+            Answer[i].style.marginTop = 0;
+        }
+
+        NewUserForm.reset();
+        removeErrorMessage(Message, empty);
+        removeWarningMessage(Message, empty);
+        CurrentQuestion = 0;
+        CloseContainer_NU.style.display = 'none';
+
     }

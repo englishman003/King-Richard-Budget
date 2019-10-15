@@ -115,11 +115,17 @@ html {
         &-close{
             color: $colorWhite;
             font-size: 1.6rem;
-            text-align: center;
-            line-height: 4.3rem;
-            &:hover{
-                color: $secondaryColor;
-                cursor: pointer;
+
+            &--icon{
+                fill: $colorWhite;
+                height: 10%;
+                width: 10%;
+
+                &:hover{
+                    fill: $secondaryColor;
+                    cursor: pointer;
+                    font-size: 1.6rem;
+                }
             }
 
         }

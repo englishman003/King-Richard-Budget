@@ -49,12 +49,15 @@ html {
 
 .superContainer-newUserContainer-close {
   color: #FFFFFF;
-  font-size: 1.6rem;
-  text-align: center;
-  line-height: 4.3rem; }
-  .superContainer-newUserContainer-close:hover {
-    color: #38D927;
-    cursor: pointer; }
+  font-size: 1.6rem; }
+  .superContainer-newUserContainer-close--icon {
+    fill: #FFFFFF;
+    height: 10%;
+    width: 10%; }
+    .superContainer-newUserContainer-close--icon:hover {
+      fill: #38D927;
+      cursor: pointer;
+      font-size: 1.6rem; }
 
 .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .inputContinue-Submit,
 .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .inputContinue-Submit2 {
@@ -328,7 +331,7 @@ html {
   height: 100%;
   width: 100%;
   background-color: rgba(105, 12, 163, 0.8);
-  transition: width .3s ease-in;
+  transition: width .3s ease-in-out;
   display: none;
   height: 100%;
   width: 0;
@@ -4676,7 +4679,16 @@ html {
   .superContainer-newUserContainer-close {
     position: relative;
     display: none;
-    border: 0.2rem solid #FFFFFF; }
+    height: 100%;
+    width: 100%;
+    padding: 10%; }
+    .superContainer-newUserContainer-close--icon {
+      position: relative;
+      align-self: center;
+      justify-self: center;
+      height: 60%;
+      width: 60%;
+      fill: #FFFFFF; }
   .superContainer-newUserContainer .newUserForm {
     position: relative;
     opacity: 1;
@@ -9095,7 +9107,8 @@ html {
               fill: #FFFFFF;
               height: 45%;
               width: 15%;
-              z-index: 4; }
+              z-index: 4;
+              display: none; }
               .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .passwordToggleContainer:hover {
                 cursor: pointer; }
               .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .passwordToggleContainer .nuHide {
@@ -9108,7 +9121,7 @@ html {
               transition: inherit; }
             .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .q1, .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .q2, .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .q3, .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .q4, .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .q5, .superContainer-newUserContainer .newUserForm_Inside-ValidationContainer .newUserFormError-Continue .questionsContainer .Questions .q6 {
               position: relative;
-              display: block;
+              opacity: 0;
               height: 0;
               width: 100%;
               background-color: transparent;
@@ -9131,7 +9144,8 @@ html {
               top: 0;
               left: 0;
               z-index: 2;
-              transition: all .4s; }
+              transition: all .4s;
+              opacity: 0; }
 
 .gridTV {
   display: grid;

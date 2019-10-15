@@ -9,7 +9,7 @@
         height: 100%;
         width: 100%;
         background-color: rgba($primaryColorDark, .8);
-        transition: width .3s ease-in;
+        transition: width .3s ease-in-out;
 
         display: none;
         @include gridLayout(100%, 0, repeat(24, 1fr), repeat(17, 1fr), 0 , 0);
@@ -24,7 +24,20 @@
         &-close{
             position: relative;
             display: none;
-            border: .2rem solid $colorWhite;
+            height: 100%;
+            width: 100%;
+            padding: 10%;
+
+            &--icon{
+                position: relative;
+                align-self: center;
+                justify-self: center;
+                height: 60%;
+                width: 60%;
+                fill: $colorWhite;
+
+            }
+
         }
 
         ///////////////////////////////////////
@@ -34,7 +47,6 @@
         //  New User Form Container - Base
         .newUserForm{
             position:relative;
-            // background-color: rgba($secondaryColor, .5);
             opacity: 1;
             transition: opacity .2s;
 
@@ -62,7 +74,6 @@
                         display: grid;
                         @include gridLayout(100%, 100%, repeat(8, 1fr), repeat(4, 1fr), 0, 0);
                         @include gridPlacement(8, 8, 4, 4);
-                        // background-color: rgba($colorBlack, .2);
 
                         .floatingLabelContainer{
                             position: relative;
@@ -157,6 +168,7 @@
                                 width: 15%;
 
                                 z-index: 4;
+                                display: none;
 
                                 &:hover{
                                     cursor: pointer;
@@ -183,15 +195,13 @@
                                 .q1, .q2, .q3, .q4, .q5, .q6{
 
                                     position: relative;
-                                    display: block;
+                                    opacity: 0;
                                     height: 0;
                                     width: 100%;
 
                                     background-color: transparent;
                                     border: .3rem solid transparent;
-                                    // border: .3rem inset rgba($colorGrey, .5);
                                     border-bottom: .2rem solid $colorWhite;
-                                    // border-right: .2rem inset transparent;
 
                                     &:focus{
                                         outline: none;
@@ -226,6 +236,7 @@
                                     z-index: 2;
 
                                     transition: all .4s;
+                                    opacity: 0;
 
                                 }
 
