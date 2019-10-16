@@ -102,6 +102,13 @@ html {
                 color: $colorWhite;
             }
 
+            &--ErrorMessage{
+
+                color: $colorBlack;
+                font-size: 1.6rem;
+
+            }
+
         }
 
     }

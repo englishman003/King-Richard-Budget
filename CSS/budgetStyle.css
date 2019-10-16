@@ -46,6 +46,9 @@ html {
   .mainNav_userNav-LoginForm .submitButton {
     line-height: 2.5rem;
     color: #FFFFFF; }
+  .mainNav_userNav-LoginForm--ErrorMessage {
+    color: #000000;
+    font-size: 1.6rem; }
 
 .superContainer-newUserContainer-close {
   color: #FFFFFF;
@@ -157,19 +160,19 @@ html {
       height: 100%;
       width: 100%;
       -ms-grid-template-columns: 1fr;
-      -ms-grid-template-rows: repeat(2, 1fr) 20%;
+      -ms-grid-template-rows: repeat(2, 1fr) 20% 20%;
       -ms-grid-column-gap: 0;
       -ms-grid-row-gap: 0;
       -o-grid-template-columns: 1fr;
-      -o-grid-template-rows: repeat(2, 1fr) 20%;
+      -o-grid-template-rows: repeat(2, 1fr) 20% 20%;
       -o-grid-column-gap: 0;
       -o-grid-row-gap: 0;
       -webkit-grid-template-columns: 1fr;
-      -webkit-grid-template-rows: repeat(2, 1fr) 20%;
+      -webkit-grid-template-rows: repeat(2, 1fr) 20% 20%;
       -webkit-grid-column-gap: 0;
       -webkit-grid-row-gap: 0;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 1fr) 20%;
+      grid-template-rows: repeat(2, 1fr) 20% 20%;
       grid-column-gap: 0;
       grid-row-gap: 0;
       height: 0;
@@ -235,7 +238,7 @@ html {
           margin-top: 1rem; }
         .mainNav_userNav-LoginForm-Input #userNav-username {
           position: absolute;
-          top: -.75rem;
+          top: -1.1rem;
           left: .25rem;
           z-index: 12;
           transform: scale(0.75); }
@@ -264,7 +267,7 @@ html {
           transition: inherit; }
         .mainNav_userNav-LoginForm-Input-username {
           align-self: end;
-          margin-bottom: 5%; }
+          margin-bottom: .5rem; }
           .mainNav_userNav-LoginForm-Input-username:placeholder-shown + #userNav-username {
             transform: translate(0.5rem, 2.9rem); }
           .mainNav_userNav-LoginForm-Input-username:focus::-webkit-input-placeholder {
@@ -272,7 +275,7 @@ html {
           .mainNav_userNav-LoginForm-Input-username:focus::-moz-placeholder {
             opacity: 1; }
           .mainNav_userNav-LoginForm-Input-username:not(:placeholder-shown) + #userNav-username, .mainNav_userNav-LoginForm-Input-username:focus + #userNav-username {
-            transform: translate(-0.5rem, 0) scale(0.75);
+            transform: translate(-0.5rem, 0.25rem) scale(0.75);
             cursor: pointer; }
         .mainNav_userNav-LoginForm-Input-password {
           align-self: start;
@@ -291,6 +294,14 @@ html {
         .mainNav_userNav-LoginForm-Input #userNav-password {
           transition: all .3s;
           cursor: text; }
+      .mainNav_userNav-LoginForm--ErrorMessage {
+        position: relative;
+        display: block;
+        z-index: 4;
+        height: 90%;
+        width: 100%;
+        padding: 1%;
+        transform: translate(0.25rem, -1.75rem); }
 
 .submitButton {
   position: relative;
@@ -310,13 +321,13 @@ html {
 #submit {
   margin-right: 10rem;
   margin-top: -1.25rem;
-  height: 100%;
+  height: 80%;
   width: 35%; }
 
 #cancel {
   margin-left: 10rem;
   margin-top: -1.25rem;
-  height: 100%;
+  height: 80%;
   width: 35%; }
 
 .superContainer {

@@ -79,7 +79,7 @@
 
             position: relative;
             display: none;
-            @include gridLayout(100%, 100%, 1fr, repeat(2, 1fr) 20%, 0, 0);
+            @include gridLayout(100%, 100%, 1fr, repeat(2, 1fr) 20% 20%, 0, 0);
             @include gridPlacement(1, 1, 3, 3);
             height: 0;
             background-color: $complementColor;
@@ -107,7 +107,7 @@
                 //     User Login Form Input Labels
                 #userNav-username{
                     position: absolute;
-                    top: -.75rem;
+                    top: -1.1rem;
                     left: .25rem;
                     // top: 0;
                     // left: .2rem;
@@ -170,7 +170,7 @@
 
                 &-username{
                     align-self: end;
-                    margin-bottom: 5%;
+                    margin-bottom: .5rem;
 
                     &:placeholder-shown + #userNav-username{
                         transform: translate(.5rem, 2.9rem);
@@ -185,7 +185,7 @@
                     }
 
                     &:not(:placeholder-shown) + #userNav-username, &:focus + #userNav-username{
-                        transform: translate(-.5rem, 0) scale(.75);
+                        transform: translate(-.5rem, .25rem) scale(.75);
                         cursor: pointer;
                     }
 
@@ -235,6 +235,21 @@
                 // End of Floating Label Code
 
             }
+
+                ///////////////////////////////////////////////
+                // Login Error Message
+                
+                &--ErrorMessage{
+                    position: relative;
+                    display: block;
+                    z-index: 4;
+
+                    height: 90%;
+                    width: 100%;
+                    padding: 1%;
+
+                    transform: translate(.25rem, -1.75rem);
+                }
             
             
         }

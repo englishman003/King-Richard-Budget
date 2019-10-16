@@ -9,11 +9,35 @@
         var Login = document.getElementById('Login');
         var LoginForm = document.getElementById('loginForm');
         var Cancel = document.getElementById('cancel');
+        var LoginError = document.getElementsByClassName('mainNav_userNav--LoginForm--ErrorMessage')[0];
+        var LoginInput = document.getElementsByClassName('LoginInput');
+        var RequiredLogin = 0;
+
+         /* -- Login Objects -- */
+         
+         var LoginRequired = {
+            username: false,
+            password: false
+         }
+
+         /* -- Login Object Arrays -- */
+         var loginRequired = Object.keys(LoginRequired);
+
+         function LoginRequirements(){
+            for(i = 0; i < LoginInput.length; i++){
+                if(LoginInput[i].hasAttribute('required')){
+                    loginRequired[i] = true;
+                }
+            }
+        }
 
         /* Login Functions */
         function ExtendLogin() {
             LoginForm.style.display = 'grid';
             LoginForm.style.height = '400%';
+
+            LoginRequirements();
+            
         };
         
         function CloseLogin() {
