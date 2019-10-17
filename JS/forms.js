@@ -9,9 +9,15 @@
         var Login = document.getElementById('Login');
         var LoginForm = document.getElementById('loginForm');
         var Cancel = document.getElementById('cancel');
-        var LoginError = document.getElementsByClassName('mainNav_userNav--LoginForm--ErrorMessage')[0];
+        var loginValue1 = document.getElementById('username');
+        var loginValue2 = document.getElementById('loginPassword');
+        var LoginUsernameError = document.getElementById('loginError1');
+        var LoginPasswordError = document.getElementById('loginError2');
         var LoginInput = document.getElementsByClassName('LoginInput');
+        var LoginSubmit = document.getElementsByClassName('submitButton')[0];
         var RequiredLogin = 0;
+        var LoginOpen = false;
+        var LoginSubmit = document.getElementsByClassName('loginSubmit')[0];
 
          /* -- Login Objects -- */
          
@@ -20,8 +26,27 @@
             password: false
          }
 
+         var user = {
+
+            firstName: 'Nathan',
+            lastName: 'Cluff',
+            username: 'Englishman003',
+            password: 'Agent003',
+            email: 'ncluff003@gmail.com'
+
+         }
+
+         var USER = {
+            username: loginValue1.value,
+            password: loginValue2.value
+         }
+
          /* -- Login Object Arrays -- */
          var loginRequired = Object.keys(LoginRequired);
+         var User = Object.values(user);
+
+         /* -- Login Arrays -- */
+         var LoginValues = [loginValue1, loginValue2];
 
          function LoginRequirements(){
             for(i = 0; i < LoginInput.length; i++){
@@ -34,19 +59,82 @@
         /* Login Functions */
         function ExtendLogin() {
             LoginForm.style.display = 'grid';
-            LoginForm.style.height = '400%';
-
+            LoginForm.style.height = '500%';
+            LoginOpen = true;
             LoginRequirements();
-            
+
         };
         
         function CloseLogin() {
             LoginForm.style.display = 'none';
             LoginForm.style.height = '0';
+            LoginOpen = false;
+        }
+
+        LoginCheck = function(){
+
+            var usernameError = "Username Is Required"
+            var passwordError = "Password Is Required"
+            var UsernameError = "Username Is Not In Our Records";
+            var PasswordError = "Password Is Not In Our Records";
+            var LoginErrorValues = [LoginUsernameError, LoginPasswordError];
+            var LoginErrors = [usernameError, passwordError];
+            var loginErrors = [UsernameError, PasswordError];
+            var ErrorNumber = 0;
+
+            for(var i = 0; i < LoginValues.length; i++){
+                if(LoginValues[i].value === "" || LoginValues[i].value === LoginValues[i].placeholder){
+                    LoginErrorValues[i].innerHTML = LoginErrors[i];
+                    ErrorNumber++;
+                }
+            }
+
+            for(var i = 0; i < LoginValues.length; i++){
+                if(LoginValues[i].value !== "" && LoginValues[i].value !== LoginValues[i].placeholder){
+                    LoginErrorValues[i].innerHTML = "";
+                    ErrorNumber--;
+                }
+            }
+
+//  ObjectArray[index].test(InputValue);
+
+            var LoginValidation = [];
+            var j = 0;
+            for(i = 2; i >= 2 && i < 4; i++){
+                if(LoginValues[j].value === User[i]){
+                    LoginValidation.push(true);
+                    j++;
+                }
+
+                else{
+                    LoginValidation.push(false);
+                    j++;
+                }
+            }
+
+            if(ErrorNumber === -2 && LoginValidation[0] === true && LoginValidation[1] === true){
+                LoginForm.submit();
+                window.location = "file:///F:/MyCompany/KingRichard/userProfile.html";
+            }
+
+            for(var i =0; i < 2; i++){
+
+                if(ErrorNumber === -2 && LoginValidation[i] !== true){
+                    LoginErrorValues[i].innerHTML = loginErrors[i];
+                }
+
+            }
+            
         }
         
         Login.onclick = function() {ExtendLogin()};
         Cancel.onclick = function() {CloseLogin()};
+        LoginSubmit.onclick = function(){
+            document.addEventListener('click', function(event)
+            { event.preventDefault();});
+            LoginCheck();
+            window.location = "file:///F:/MyCompany/KingRichard/userProfile.html";
+        }
 
 //   --------------------------------------- ||
 //         New User Forms         ||
@@ -250,7 +338,6 @@ ShowPassword[1].onclick = function(){
             element.classList.add('error');
             element.style.opacity = 1;
             element2[CurrentQuestion].focus();
-            // element2[CurrentQuestion].style.borderBottom = '.2rem solid red';        
         }
 
         function removeErrorMessage(element, errormessage){
@@ -358,12 +445,20 @@ ShowPassword[1].onclick = function(){
         
     }
 
+    //   --------------------------------------- ||
+    //            Form Submit            ||
+    //   --------------------------------------- ||
+
 document.addEventListener("keydown", function(event){
     if(CurrentQuestion < 6){                                                            // Checking if you are still answering form questions.
         if(event.keyCode === 13){    
             event.preventDefault();
-            QuestionSubmit.click();    
-        }    
+
+            switch(LoginOpen){
+              case false:  document.addEventListener('click', function(event){ event.preventDefault();}); QuestionSubmit.click();
+              case true: LoginCheck(); window.location = "file:///F:/MyCompany/KingRichard/userProfile.html";
+            }     
+        }  
     }    
     if(CurrentQuestion === 6){                                                      // Checking if you are done with the form.
         NewUserForm.submit();    

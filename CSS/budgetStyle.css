@@ -47,8 +47,11 @@ html {
     line-height: 2.5rem;
     color: #FFFFFF; }
   .mainNav_userNav-LoginForm--ErrorMessage {
-    color: #000000;
-    font-size: 1.6rem; }
+    position: relative;
+    color: red;
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+    text-align: center; }
 
 .superContainer-newUserContainer-close {
   color: #FFFFFF;
@@ -160,19 +163,19 @@ html {
       height: 100%;
       width: 100%;
       -ms-grid-template-columns: 1fr;
-      -ms-grid-template-rows: repeat(2, 1fr) 20% 20%;
+      -ms-grid-template-rows: repeat(2, 1fr 5%) 20%;
       -ms-grid-column-gap: 0;
       -ms-grid-row-gap: 0;
       -o-grid-template-columns: 1fr;
-      -o-grid-template-rows: repeat(2, 1fr) 20% 20%;
+      -o-grid-template-rows: repeat(2, 1fr 5%) 20%;
       -o-grid-column-gap: 0;
       -o-grid-row-gap: 0;
       -webkit-grid-template-columns: 1fr;
-      -webkit-grid-template-rows: repeat(2, 1fr) 20% 20%;
+      -webkit-grid-template-rows: repeat(2, 1fr 5%) 20%;
       -webkit-grid-column-gap: 0;
       -webkit-grid-row-gap: 0;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 1fr) 20% 20%;
+      grid-template-rows: repeat(2, 1fr 5%) 20%;
       grid-column-gap: 0;
       grid-row-gap: 0;
       height: 0;
@@ -235,10 +238,10 @@ html {
         margin: auto;
         height: 100%; }
         .mainNav_userNav-LoginForm-Input:first-child {
-          margin-top: 1rem; }
+          margin-top: 0rem; }
         .mainNav_userNav-LoginForm-Input #userNav-username {
           position: absolute;
-          top: -1.1rem;
+          top: .35rem;
           left: .25rem;
           z-index: 12;
           transform: scale(0.75); }
@@ -258,7 +261,7 @@ html {
           .mainNav_userNav-LoginForm-Input-username:focus, .mainNav_userNav-LoginForm-Input-password:focus {
             outline: 0.2rem solid #38D927; }
         .mainNav_userNav-LoginForm-Input-password {
-          margin-bottom: 2.5rem; }
+          margin-bottom: 3rem; }
         .mainNav_userNav-LoginForm-Input ::-webkit-input-placeholder {
           opacity: 0;
           transition: inherit; }
@@ -269,7 +272,8 @@ html {
           align-self: end;
           margin-bottom: .5rem; }
           .mainNav_userNav-LoginForm-Input-username:placeholder-shown + #userNav-username {
-            transform: translate(0.5rem, 2.9rem); }
+            transform: translate(0.5rem, 2.9rem);
+            -moz-transform: translate(0.5rem, 3.1rem); }
           .mainNav_userNav-LoginForm-Input-username:focus::-webkit-input-placeholder {
             opacity: 1; }
           .mainNav_userNav-LoginForm-Input-username:focus::-moz-placeholder {
@@ -281,13 +285,15 @@ html {
           align-self: start;
           margin-top: 12.5%; }
           .mainNav_userNav-LoginForm-Input-password:placeholder-shown + #userNav-password {
-            transform: translate(0.5rem, 2.6rem); }
+            transform: translate(0.5rem, 2.6rem);
+            -moz-transform: translate(0.5rem, 2.4rem); }
           .mainNav_userNav-LoginForm-Input-password:focus::-webkit-input-placeholder {
             opacity: 1; }
           .mainNav_userNav-LoginForm-Input-password:focus::-moz-placeholder {
             opacity: 1; }
           .mainNav_userNav-LoginForm-Input-password:not(:placeholder-shown) + #userNav-password, .mainNav_userNav-LoginForm-Input-password:focus + #userNav-password {
             transform: translate(-0.5rem, 0) scale(0.75);
+            -moz-transform: translate(-0.5rem, -0.5rem) scale(0.75);
             cursor: pointer; }
         .mainNav_userNav-LoginForm-Input-username,
         .mainNav_userNav-LoginForm-Input #userNav-username, .mainNav_userNav-LoginForm-Input-password,
@@ -300,8 +306,13 @@ html {
         z-index: 4;
         height: 90%;
         width: 100%;
-        padding: 1%;
-        transform: translate(0.25rem, -1.75rem); }
+        padding: 1%; }
+      .mainNav_userNav-LoginForm #loginError1 {
+        transform: translate(0rem, -1rem);
+        -moz-transform: translate(0.4rem, -1rem); }
+      .mainNav_userNav-LoginForm #loginError2 {
+        transform: translate(0rem, -3.45rem);
+        -moz-transform: translate(0.25rem, -3.4rem); }
 
 .submitButton {
   position: relative;
@@ -318,7 +329,7 @@ html {
     cursor: pointer;
     background-color: #38D927; }
 
-#submit {
+#Submit {
   margin-right: 10rem;
   margin-top: -1.25rem;
   height: 80%;

@@ -104,8 +104,11 @@ html {
 
             &--ErrorMessage{
 
-                color: $colorBlack;
-                font-size: 1.6rem;
+                position: relative;
+                color: red;
+                font-size: 1.2rem;
+                line-height: 2.25rem;
+                text-align: center;
 
             }
 
