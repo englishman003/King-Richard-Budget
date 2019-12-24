@@ -1,0 +1,61 @@
+.mainNav{
+
+    .loggedIn{
+    display: grid;
+    @include gridLayout(100%, auto, auto 1fr 10rem, 1fr, 0, 0 );
+    @include gridPlacement(3, 3, 1, 1);
+
+    justify-content: center;
+    padding: .5rem;
+    align-items: center;
+
+        .user-icon{
+            height: 85%;
+            width: auto;
+        }
+
+        .usernameContainer{
+            position: relative;
+            // padding: 1rem;
+            margin: 0 1rem;
+        }
+
+        .logoutButton{
+            height: 100%;
+            width: 97.5%;
+            justify-self: center;
+            background-color: rgba($colorWhite, .5);
+            border: none;
+
+            &:hover{
+                background-color: rgba($secondaryColor, .85);
+                cursor: pointer;
+            }
+
+            &:active{
+                background-color: rgba($secondaryColor, 1);
+            }
+
+        }
+
+    }
+}
+
+.profileContainer{
+    position: relative;
+    display: grid;
+    @include gridLayout(100%, 100%, repeat(24, 1fr), repeat(17, 1fr), 0 ,0);
+    @include gridPlacement(24, 24, 17, 17);
+    z-index: 2;
+
+    background-color: rgba($primaryColorDark, .8);
+
+    .profileSettings{
+        margin: 1.5rem 1rem;
+        &:hover{
+            cursor: pointer;
+            color: $secondaryColor;
+        }
+    }
+}
+

@@ -4,7 +4,14 @@
   "description": "A budget fit for royalty.",
   "main": "jQuery.v3.3.1.js",
   "scripts": {
-    "watch:sass": "node-sass SCSS/Main/main.scss CSS/budgetStyle.css -w"
+    "WatchSass": "node-sass SCSS/Main/main.scss CSS/budgetStyle.css -w",
+    "DevServer": "live-server",
+    "Start": "npm-run-all --parallel DevServer WatchSass",
+    "CompileSass": "node-sass SCSS/Main/main.scss CSS/budgetStyle.comp.css",
+    "ConcatCSS": "concat -o CSS/budgetStyle.concat.css SCSS/Vendors/Animate.css SCSS/Vendors/Normalize.css CSS/budgetStyle.comp.css",
+    "PrefixCSS": "postcss --use=autoprefixer -b \"last 20 versions\" CSS/budgetStyle.concat.css -o CSS/budgetStyle.prefix.css",
+    "CompressCSS": "node-sass CSS/budgetStyle.prefix.css CSS/budgetStyle.css --output-style compressed",
+    "BuildCSS": "npm-run-all CompileSass ConcatCSS PrefixCSS CompressCSS"
   },
   "keywords": [
     "Budget",
@@ -16,8 +23,18 @@
   "author": "Nathan Cluff",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "autoprefixer": "^9.7.0",
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.0",
+    "node.js": "0.0.0",
+    "npm-run-all": "^4.1.5",
+    "php": "0.0.1",
+    "postcss-cli": "^6.1.3",
+    "postcss-import": "^12.0.1"
   },
+  "browserslist": [
+    "last 20 versions"
+  ],
   "dependencies": {
     "jquery": "^3.4.1"
   }

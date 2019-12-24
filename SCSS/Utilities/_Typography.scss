@@ -115,7 +115,42 @@ html {
         }
 
     }
+
+    .user-icon{
+        font-size: 2.4rem;
+        line-height: 3rem;
+    }
+
+    .usernameContainer{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .user-icon, .usernameContainer{
+        color: $colorWhite;
+    }
+
+    .logoutButton{
+        font-size: 1.6rem;
+        &:hover, &:active{
+            color: $colorWhite;
+        }
+    }
     
+}
+
+.profileSettings{
+    position: relative;
+    font-size: 3.5rem;
+    color: $colorWhite;
+    text-align: center;
+}
+
+.profileGreeting{
+    font-size: 6.4rem;
+    color: $colorWhite;
+    text-align: center;
+    line-height: 6.3rem;
 }
 
 .superContainer{
@@ -263,4 +298,10 @@ html {
 
     }
 
+}
+
+// Profile Card Container
+.cardHeader{
+    font-size: 3rem;
+    color: $colorWhite;
 }
