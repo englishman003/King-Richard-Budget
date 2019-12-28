@@ -40,7 +40,7 @@
 
                         <i class="fas fa-user user-icon column_1-1 row_1-1"></i>
                         <div class="usernameContainer column_2-1 row_1-1">
-                            <p class="username">Alexander Benjamin Hendrickson</p>
+                            <a href="userProfile.html"><p class="username">Nathan Cluff</p></a>
                         </div>
                         <button class="logoutButton column_3-1 row_1-1" value="logout">Logout</button>
 
@@ -50,29 +50,66 @@
 
                 <!-- End Navigation -->
 
-                <div class="profileContainer column_1-24 row_2-17">
+            <div class="profileContainer column_1-24 row_2-17">
 
-                    <i class="fas fa-cog profileSettings column_24-1 row_1-2"></i>
+                <i class="fas fa-cog profileSettings  column_24-1 row_1-2"></i>
+                <i class="fas fa-times  profileSettings2 column_24-1 row_1-2"></i>
 
-                    <p class="profileGreeting column_8-10 row_2-3">Good Morning Alexander!</p>
+                <p class="profileGreeting column_8-10 row_2-3">Good Morning Nathan!</p>
 
 
-                    <section class="cardContainer column_3-6 row_6-10">
-                            <header class="cardHeader">Access Budget</header>
+                <section class="cardContainer column_3-6 row_6-10">
+                    <header class="cardHeader">Access Budget</header>
+                    <p class="cardOption">Cluff's Budget</p>
+                    <p class="cardOption">Cluff's Budget</p>
+                </section>
+                <section class="cardContainer column_10-6 row_6-10">
+                    <header class="cardHeader">Delete Budget</header>    
+                </section>
+                <section class="cardContainer column_17-6 row_6-10" id="createBudget">
+                    <header class="cardHeader">Create Budget</header>            
+                </section>
+                <div class="profileContainer-Settings-Container column_1-24 row_4-15">
+                    <section class="profileSettings-GridContainer">
+                        <h2 class="profileSettings-header column_1-1 row_1-1">What would you like to do?</h2>
+                        <section class="change-username column_1-1 row_2-2">
+                            <header class="change-username-header">Change My Username</header>
+                            <div class="formContainer one">
+                                <form action="">
+                                    <input type="text" class="un" id="un" placeholder="Enter New Username">
+                                </form>
+                            </div>
+                            <h6><button class="newSubmit">Hit Enter To Submit</button></h6>
+
+                        </section>
+                        <section class="change-password column_1-1 row_4-3">
+                            <header class="change-password-header">Change My Password</header>
+                            <div class="formContainer two">
+                                <form action="">
+                                    <input type="text" class="pw" id="pw" placeholder="Enter New Password">
+                                </form>
+                            </div>
+                            <div class="formContainer two">
+                                <form action="">
+                                    <input type="text" class="rpw" id="rpw" placeholder="Repeat New Password">
+                                </form>
+                            </div>
+                            <h6><button class="newSubmit">Hit Enter To Submit</button></h6>
+                        </section>
+                        <section class="delete-profile column_1-1 row_7-1">
+                            <header class="delete-profile-header">Delete My Profile</header>
+                        </section>
+
                     </section>
-                    <section class="cardContainer column_10-6 row_6-10">
-                        <header class="cardHeader">Delete Budget</header>    
-                    </section>
-                    <section class="cardContainer column_17-6 row_6-10">
-                        <header class="cardHeader">Create Budget</header>            
-                    </section>
+
+
                 </div>
+            </div>
 
-            </section>
+        </section>
 
 
         <script src="SCSS/Vendors/Icomoon/N-Icons/svgxuse.js" async defer></script>
-        <script src="JS/forms.js" async defer></script>
-        <script src="JS/index.js" async defer></script>
+        <script src="JS/profile.js" async defer></script>
     </body>
 </html>

@@ -40,14 +40,3 @@
 
     }
 }
-
-.profileContainer{
-    position: relative;
-    display: grid;
-    @include gridLayout(100%, 100%, repeat(24, 1fr), repeat(17, 1fr), 0 ,0);
-    @include gridPlacement(24, 24, 17, 17);
-    z-index: 2;
-
-    background-color: rgba($primaryColorDark, .8);
-}
-

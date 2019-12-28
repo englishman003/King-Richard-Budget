@@ -126,8 +126,12 @@ html {
         text-align: center;
     }
 
-    .user-icon, .usernameContainer{
+    .user-icon, .usernameContainer, .usernameContainer a{
         color: $colorWhite;
+    }
+
+    .usernameContainer a{
+        text-decoration: none;
     }
 
     .logoutButton{
@@ -139,11 +143,14 @@ html {
     
 }
 
-.profileSettings{
+.profileSettings, .profileSettings2{
     position: relative;
     font-size: 3.5rem;
     color: $colorWhite;
     text-align: center;
+    &:hover{
+        color: $secondaryColor;
+    }
 }
 
 .profileGreeting{
@@ -301,7 +308,51 @@ html {
 }
 
 // Profile Card Container
-.cardHeader{
+.cardContainer{
+    .cardHeader{
     font-size: 3rem;
     color: $colorWhite;
+    }
+    .cardOption{
+        font-size: 2.5rem;
+        color: $colorWhite;
+    }
+}
+
+.profileContainer-Settings-Container{
+    .profileSettings-GridContainer{
+        .profileSettings-header{
+            font-size: 3.2rem;
+            font-weight: 300;
+            line-height: 8.29rem;
+            color: $colorWhite;
+        }
+        .change-username, .change-password, .delete-profile{
+            font-size: 3.2rem;
+            color: $colorWhite;
+            text-align: center;
+
+            &:active{
+                color: $colorBlack;
+            }
+
+            &-header{
+                position: relative;
+                height: 8.293rem;
+            }
+        }
+        .change-username, .change-password{
+            .formContainer{
+                #un, #pw, #rpw{
+                    font-size: 2.4rem;
+                    text-align: center;
+                    color: $colorWhite;
+                }
+            }
+            h6 .newSubmit{
+                font-size: 1.4rem;
+                color: $colorWhite;    
+            }
+        }
+    }
 }
