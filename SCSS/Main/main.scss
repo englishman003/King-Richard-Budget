@@ -12,6 +12,8 @@
 @import "SCSS/Components/Button";
 @import "SCSS/Components/SuperContainer";
 @import "SCSS/Components/NewUserContainer";
+@import "SCSS/Components/cardContainer";
+@import "SCSS/Components/ProfileSettings";
 
 ////////////////////////////////////////////
 //// Layout
@@ -31,6 +33,8 @@
 //// Pages
 
 @import "SCSS/Pages/home";
+@import "SCSS/Pages/UserProfile";
+@import "SCSS/Pages/create";
 
 ////////////////////////////////////////////
 //// Themes

@@ -115,7 +115,49 @@ html {
         }
 
     }
+
+    .user-icon{
+        font-size: 2.4rem;
+        line-height: 3rem;
+    }
+
+    .usernameContainer{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .user-icon, .usernameContainer, .usernameContainer a{
+        color: $colorWhite;
+    }
+
+    .usernameContainer a{
+        text-decoration: none;
+    }
+
+    .logoutButton{
+        font-size: 1.6rem;
+        &:hover, &:active{
+            color: $colorWhite;
+        }
+    }
     
+}
+
+.profileSettings, .profileSettings2{
+    position: relative;
+    font-size: 3.5rem;
+    color: $colorWhite;
+    text-align: center;
+    &:hover{
+        color: $secondaryColor;
+    }
+}
+
+.profileGreeting{
+    font-size: 6.4rem;
+    color: $colorWhite;
+    text-align: center;
+    line-height: 6.3rem;
 }
 
 .superContainer{
@@ -263,4 +305,54 @@ html {
 
     }
 
+}
+
+// Profile Card Container
+.cardContainer{
+    .cardHeader{
+    font-size: 3rem;
+    color: $colorWhite;
+    }
+    .cardOption{
+        font-size: 2.5rem;
+        color: $colorWhite;
+    }
+}
+
+.profileContainer-Settings-Container{
+    .profileSettings-GridContainer{
+        .profileSettings-header{
+            font-size: 3.2rem;
+            font-weight: 300;
+            line-height: 8.29rem;
+            color: $colorWhite;
+        }
+        .change-username, .change-password, .delete-profile{
+            font-size: 3.2rem;
+            color: $colorWhite;
+            text-align: center;
+
+            &:active{
+                color: $colorBlack;
+            }
+
+            &-header{
+                position: relative;
+                height: 8.293rem;
+            }
+        }
+        .change-username, .change-password{
+            .formContainer{
+                #un, #pw, #rpw{
+                    font-size: 2.4rem;
+                    text-align: center;
+                    color: $colorWhite;
+                }
+            }
+            h6 .newSubmit{
+                font-size: 1.4rem;
+                color: $colorWhite;    
+            }
+        }
+    }
 }
